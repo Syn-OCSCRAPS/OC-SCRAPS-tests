@@ -9,35 +9,40 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <img src="images/logo.png" alt="OC SCRAPS Logo" class="logo" />
+  <header>
+    <img src="images/logo.png" alt="Logo" class="logo" />
     <nav>
-      <a href="#home">Home</a>
-      <a href="/mixtape">Mixtape</a>
-      <a href="/media">Media</a>
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('mixtape')">Mixtape</button>
+      <button onclick="showPage('media')">Media</button>
+      <button onclick="showPage('merch')">Merch</button>
     </nav>
   </header>
 
   <main>
-    <section class="feed-intro">
-      <h1>Welcome to OC SCRAPS</h1>
-      <p>This is the feed. It’s where we drop updates, previews, beats, and random dumb shit. Scroll down, listen up, and wash your hands.</p>
+    <section id="home" class="page-section">
+      <div class="post">
+        <h2>Live Updates</h2>
+        <p>If you scanned this, hi. This is where we post our shit sounding music.</p>
+        <p>So if you were expecting kids from our school going absolutely ballistic on each other, uh sorry. That's not what this is.</p>
+        <p>Now go wash your hands.</p>
+      </div>
     </section>
 
-    <section class="feed">
-      <article class="post">
+    <section id="mixtape" class="page-section hidden">
+      <div class="post">
         <h2>TRACK 1</h2>
-        <p><strong>Performed by:</strong> Syn</p>
-        <p><strong>Composed by:</strong> Syn</p>
+        <p>Performed by Syn</p>
+        <p>Composed by Syn</p>
         <audio src="1.TRACK_1.mp3" class="custom-audio" preload="metadata"></audio>
         <div class="audio-player">
           <button class="play-pause">►</button>
           <input type="range" class="seek-slider" value="0" step="1">
           <div class="time">0:00 / 0:00</div>
         </div>
-      </article>
+      </div>
 
-      <article class="post">
+      <div class="post">
         <h2>OC SCRAPS</h2>
         <p>This is OC SCRAPS.</p>
         <audio src="2.OC_SCRAPS.mp3" class="custom-audio" preload="metadata"></audio>
@@ -46,9 +51,9 @@
           <input type="range" class="seek-slider" value="0" step="1">
           <div class="time">0:00 / 0:00</div>
         </div>
-      </article>
+      </div>
 
-      <article class="post">
+      <div class="post">
         <h2>noose</h2>
         <p>a diss track.</p>
         <audio src="3.noose.mp3" class="custom-audio" preload="metadata"></audio>
@@ -57,76 +62,91 @@
           <input type="range" class="seek-slider" value="0" step="1">
           <div class="time">0:00 / 0:00</div>
         </div>
-      </article>
+      </div>
 
-      <article class="post">
+      <div class="post">
         <h2>UP, DOWN</h2>
-        <p>This track is about a porn addict.</p>
+        <p>this track is about a porn addict.</p>
         <audio src="4.UP_DOWN.mp3" class="custom-audio" preload="metadata"></audio>
         <div class="audio-player">
           <button class="play-pause">►</button>
           <input type="range" class="seek-slider" value="0" step="1">
           <div class="time">0:00 / 0:00</div>
         </div>
-      </article>
+      </div>
+    </section>
+
+    <section id="media" class="page-section hidden">
+      <div class="post">
+        <h2>Media</h2>
+        <p>Coming soon: behind the scenes and more.</p>
+      </div>
+    </section>
+
+    <section id="merch" class="page-section hidden">
+      <div class="post">
+        <h2>Merch</h2>
+        <p>We're making cool stuff on Redbubble (or Shopify eventually). Stay tuned!</p>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© OC SCRAPS. QR code takes you here. Keep up or miss out.</p>
-  </footer>
-
-<script>
-  const audioEls = document.querySelectorAll('.custom-audio');
-
-  audioEls.forEach((audioEl, index) => {
-    const player = audioEl.nextElementSibling;
-    const playPause = player.querySelector('.play-pause');
-    const slider = player.querySelector('.seek-slider');
-    const timeDisplay = player.querySelector('.time');
-
-    function formatTime(sec) {
-      const m = Math.floor(sec / 60);
-      const s = Math.floor(sec % 60);
-      return `${m}:${s.toString().padStart(2, '0')}`;
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page-section').forEach(sec => {
+        sec.classList.add('hidden');
+      });
+      document.getElementById(pageId).classList.remove('hidden');
     }
 
-    playPause.addEventListener('click', () => {
-      const isPlaying = !audioEl.paused && !audioEl.ended;
-      audioEls.forEach((a, i) => {
-        a.pause();
-        const btn = a.nextElementSibling.querySelector('.play-pause');
-        if (btn) btn.textContent = '►';
+    const audioEls = document.querySelectorAll('.custom-audio');
+    audioEls.forEach((audioEl, index) => {
+      const player = audioEl.nextElementSibling;
+      const playPause = player.querySelector('.play-pause');
+      const slider = player.querySelector('.seek-slider');
+      const timeDisplay = player.querySelector('.time');
+
+      function formatTime(sec) {
+        const m = Math.floor(sec / 60);
+        const s = Math.floor(sec % 60);
+        return `${m}:${s.toString().padStart(2, '0')}`;
+      }
+
+      playPause.addEventListener('click', () => {
+        const isPlaying = !audioEl.paused && !audioEl.ended;
+        audioEls.forEach((a, i) => {
+          a.pause();
+          const btn = a.nextElementSibling.querySelector('.play-pause');
+          if (btn) btn.textContent = '►';
+        });
+        if (!isPlaying) {
+          audioEl.play();
+          playPause.textContent = '❚❚';
+        }
       });
-      if (!isPlaying) {
-        audioEl.play();
-        playPause.textContent = '❚❚';
-      }
-    });
 
-    audioEl.addEventListener('timeupdate', () => {
-      slider.max = audioEl.duration;
-      slider.value = audioEl.currentTime;
-      if (!isNaN(audioEl.duration)) {
-        timeDisplay.textContent = `${formatTime(audioEl.currentTime)} / ${formatTime(audioEl.duration)}`;
-      }
-    });
+      audioEl.addEventListener('timeupdate', () => {
+        slider.max = audioEl.duration;
+        slider.value = audioEl.currentTime;
+        if (!isNaN(audioEl.duration)) {
+          timeDisplay.textContent = `${formatTime(audioEl.currentTime)} / ${formatTime(audioEl.duration)}`;
+        }
+      });
 
-    slider.addEventListener('input', () => {
-      audioEl.currentTime = slider.value;
-    });
+      slider.addEventListener('input', () => {
+        audioEl.currentTime = slider.value;
+      });
 
-    audioEl.addEventListener('ended', () => {
-      playPause.textContent = '►';
-      const nextAudio = audioEls[index + 1];
-      if (nextAudio) {
-        const nextBtn = nextAudio.nextElementSibling.querySelector('.play-pause');
-        nextAudio.play();
-        if (nextBtn) nextBtn.textContent = '❚❚';
-      }
+      audioEl.addEventListener('ended', () => {
+        playPause.textContent = '►';
+        const nextAudio = audioEls[index + 1];
+        if (nextAudio) {
+          const nextBtn = nextAudio.nextElementSibling.querySelector('.play-pause');
+          nextAudio.play();
+          if (nextBtn) nextBtn.textContent = '❚❚';
+        }
+      });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
