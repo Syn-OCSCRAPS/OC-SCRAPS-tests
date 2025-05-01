@@ -9,18 +9,19 @@
       font-family: 'Fubbick';
       src: url('/path/to/Fubbick-Outline.otf') format('opentype');
     }
-    body {
+body {
       margin: 0;
       background: #000;
       color: #fff;
       font-family: monospace;
+      overflow-x: hidden;
     }
     header {
       text-align: center;
       padding: 2rem;
       font-size: 2.5rem;
       background: #111;
-      border-bottom: 3px solid #0ff;
+      border-bottom: 3px solid #f0f;
     }
     .logo {
       width: 120px;
@@ -33,9 +34,63 @@
       padding: 1rem;
     }
     nav a {
-      color: #0ff;
+      color: #f0f;
       text-decoration: none;
       margin: 0 10px;
+    }
+    .glitchy {
+      font-size: 1.5rem;
+      color: #0ff;
+      text-shadow: 2px 0 red, -2px 0 blue;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red, -2px 0 blue; }
+      20% { text-shadow: -2px 0 red, 2px 0 blue; }
+      40% { text-shadow: 2px 2px red, -2px -2px blue; }
+      60% { text-shadow: -2px -2px red, 2px 2px blue; }
+      80% { text-shadow: 2px -2px red, -2px 2px blue; }
+      100% { text-shadow: 2px 0 red, -2px 0 blue; }
+    }
+    .player {
+      margin: 2rem auto;
+      width: 80%;
+      max-width: 600px;
+      background: #111;
+      padding: 1rem;
+      border: 2px dashed #0ff;
+    }
+    .rant {
+      padding: 1rem 2rem;
+      background: #111;
+      margin: 2rem;
+      border-left: 5px solid #f0f;
+    }
+    .store-item {
+      background: #111;
+      margin: 2rem;
+      padding: 1rem;
+      border: 1px solid #0ff;
+    }
+    .store-item img {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .store-item button {
+      background: #f0f;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      background: #111;
     }
     .track {
       background: #111;
