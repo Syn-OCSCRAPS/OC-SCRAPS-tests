@@ -1,130 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="images/OC.ico" type="image/x-icon">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OC SCRAPS MIXTAPE</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OC SCRAPS</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: monospace;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      font-size: 2.5rem;
+      background: #111;
+      border-bottom: 3px solid #f0f;
+    }
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    nav {
+      text-align: center;
+      background: #222;
+      padding: 1rem;
+    }
+    nav a {
+      color: #f0f;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .glitchy {
+      font-size: 1.5rem;
+      color: #0ff;
+      text-shadow: 2px 0 red, -2px 0 blue;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red, -2px 0 blue; }
+      20% { text-shadow: -2px 0 red, 2px 0 blue; }
+      40% { text-shadow: 2px 2px red, -2px -2px blue; }
+      60% { text-shadow: -2px -2px red, 2px 2px blue; }
+      80% { text-shadow: 2px -2px red, -2px 2px blue; }
+      100% { text-shadow: 2px 0 red, -2px 0 blue; }
+    }
+    .player {
+      margin: 2rem auto;
+      width: 80%;
+      max-width: 600px;
+      background: #111;
+      padding: 1rem;
+      border: 2px dashed #0ff;
+    }
+    .rant {
+      padding: 1rem 2rem;
+      background: #111;
+      margin: 2rem;
+      border-left: 5px solid #f0f;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      background: #111;
+    }
+  </style>
 </head>
-
 <body>
   <header>
-    <img src="images/logo.png" alt="Logo" class="logo" />
-    <nav class="navbar">
-      <a href="#home" class="nav-button">Home</a>
-      <a href="#mixtape" class="nav-button">Mixtape</a>
-      <a href="#media" class="nav-button">Media</a>
-      <a href="#merch" class="nav-button">Merch</a>
-    </nav>
+    <img src="/images/logo.png" class="logo" alt="OC SCRAPS logo">
+    <div class="glitchy">WELCOME TO OC SCRAPS</div>
   </header>
-  
+  <nav>
+    <a href="/index.html">HOME</a>
+    <a href="/tracks.html">TRACKS</a>
+    <a href="/dump.html">DUMP</a>
+    <a href="/store.html">STORE</a>
+  </nav>
   <main>
-    <section id="home" class="post">
-      <h2>hi</h2>
-      <p>If you scanned this, hi. This is where we post our shit sounding music.</p>
-      <p>So if you were expecting kids from our school going absolutely ballistic on eachother, uh sorry. That's not what this is.</p>
-      <p>Now go wash your hands.</p>
+    <section class="player">
+      <h2>TRACKS</h2>
+      <audio controls src="/audio/track1.mp3"></audio><br>
+      <audio controls src="/audio/track2.mp3"></audio><br>
+      <audio controls src="/audio/track3.mp3"></audio><br>
+      <audio controls src="/audio/track4.mp3"></audio>
     </section>
 
-    <section id="mixtape" class="post">
-      <h2>TRACK 1</h2>
-      <p>Performed by Syn</p>
-      <p>Composed by Syn</p>
-
-      <audio src="1.TRACK_1.mp3" class="custom-audio" preload="metadata"></audio>
-      <div class="audio-player">
-        <button class="play-pause">►</button>
-        <input type="range" class="seek-slider" value="0" step="1">
-        <div class="time">0:00 / 0:00</div>
-      </div>
-    </section>
-
-    <section id="media" class="post">
-      <h2>OC SCRAPS</h2>
-      <p>This is OC SCRAPS.</p>
-
-      <audio src="2.OC_SCRAPS.mp3" class="custom-audio" preload="metadata"></audio>
-      <div class="audio-player">
-        <button class="play-pause">►</button>
-        <input type="range" class="seek-slider" value="0" step="1">
-        <div class="time">0:00 / 0:00</div>
-      </div>
-    </section>
-
-    <section id="merch" class="post">
-      <h2>UP, DOWN</h2>
-      <p>This track is about a porn addict.</p>
-
-      <audio src="4.UP_DOWN.mp3" class="custom-audio" preload="metadata"></audio>
-      <div class="audio-player">
-        <button class="play-pause">►</button>
-        <input type="range" class="seek-slider" value="0" step="1">
-        <div class="time">0:00 / 0:00</div>
-      </div>
+    <section class="rant">
+      <h2>DUMP POST</h2>
+      <p>yo this site not even finished yet. come back later. maybe i’ll drop some more trash here soon.</p>
     </section>
   </main>
-
-  <script>
-    const audioEls = document.querySelectorAll('.custom-audio');
-
-    audioEls.forEach((audioEl, index) => {
-      const player = audioEl.nextElementSibling;
-      const playPause = player.querySelector('.play-pause');
-      const slider = player.querySelector('.seek-slider');
-      const timeDisplay = player.querySelector('.time');
-
-      // Format seconds into mm:ss
-      function formatTime(sec) {
-        const m = Math.floor(sec / 60);
-        const s = Math.floor(sec % 60);
-        return `${m}:${s.toString().padStart(2, '0')}`;
-      }
-
-      // Play/pause button click
-      playPause.addEventListener('click', () => {
-        const isCurrentlyPlaying = !audioEl.paused && !audioEl.ended;
-
-        // Pause all others
-        audioEls.forEach((a, i) => {
-          a.pause();
-          const btn = a.nextElementSibling.querySelector('.play-pause');
-          if (btn) btn.textContent = '►';
-        });
-
-        if (!isCurrentlyPlaying) {
-          audioEl.play();
-          playPause.textContent = '❚❚';
-        }
-      });
-
-      // Update slider and time
-      audioEl.addEventListener('timeupdate', () => {
-        slider.max = audioEl.duration;
-        slider.value = audioEl.currentTime;
-
-        if (!isNaN(audioEl.duration)) {
-          timeDisplay.textContent = `${formatTime(audioEl.currentTime)} / ${formatTime(audioEl.duration)}`;
-        }
-      });
-
-      // Seeking
-      slider.addEventListener('input', () => {
-        audioEl.currentTime = slider.value;
-      });
-
-      // When track ends, play next
-      audioEl.addEventListener('ended', () => {
-        playPause.textContent = '►';
-
-        const nextAudio = audioEls[index + 1];
-        if (nextAudio) {
-          const nextBtn = nextAudio.nextElementSibling.querySelector('.play-pause');
-          nextAudio.play();
-          if (nextBtn) nextBtn.textContent = '❚❚';
-        }
-      });
-    });
-  </script>
+  <footer>
+    <p>&copy; OC SCRAPS — built by Tyson on some late night noise</p>
+  </footer>
 </body>
 </html>
