@@ -106,22 +106,30 @@
 
   <script>
     // Load markdown posts
-    const posts = [
-      { title: "Welcome to OC SCRAPS", file: "posts/welcome-to-oc-scraps.md" },
-      // Add new posts here in the same format
-    ];
+const posts = [
+  {
+    title: "Welcome to OC SCRAPS",
+    file: "posts/welcome-to-oc-scraps.md",
+    date: "2025-05-02"
+  },
+  // Add more posts here
+];
 
-    async function loadPost(post) {
-      const response = await fetch(post.file);
-      const markdown = await response.text();
-      const htmlContent = marked(markdown);
+async function loadPost(post) {
+  const response = await fetch(post.file);
+  const markdown = await response.text();
+  const htmlContent = marked.parse(markdown); // .parse preferred in newer Marked versions
 
-      const postElement = document.createElement('div');
-      postElement.classList.add('blog-post');
-      postElement.innerHTML = `<h3>${post.title}</h3>${htmlContent}`;
-      
-      document.getElementById('blog-posts').appendChild(postElement);
-    }
+  const postElement = document.createElement('div');
+  postElement.classList.add('blog-post');
+  postElement.innerHTML = `
+    <h3>${post.title}</h3>
+    <small style="color:#888;">${post.date}</small>
+    ${htmlContent}
+  `;
+
+  document.getElementById('blog-posts').appendChild(postElement);
+}
 
     // Loop over posts and load them
     posts.forEach(loadPost);
