@@ -1,236 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="images/OC.ico" type="image/x-icon">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OC SCRAPS</title>
-  <link rel="icon" href="images/OC.ico" type="image/x-icon">
+  <title>OC SCRAPS MIXTAPE</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #111;
-      color: #f5f5f5;
-    }
-
-    header {
-      background-color: #000;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #333;
-    }
-
-    .logo {
-      height: 40px;
-    }
-
-    nav button {
-      background: none;
-      border: none;
-      color: #f5f5f5;
-      font-size: 1rem;
-      margin-left: 1rem;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-
-    nav button:hover {
-      opacity: 0.7;
-    }
-
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .page-section {
-      display: none;
-    }
-
-    .page-section:not(.hidden) {
-      display: block;
-    }
-
-    .post {
-      margin-bottom: 3rem;
-      background-color: #1a1a1a;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    }
-
-    .post h2 {
-      margin-top: 0;
-    }
-
-    .audio-player {
-      display: flex;
-      align-items: center;
-      margin-top: 0.75rem;
-    }
-
-    .audio-player button.play-pause {
-      font-size: 1.2rem;
-      margin-right: 1rem;
-      background: #333;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      padding: 0.4rem 0.6rem;
-      cursor: pointer;
-    }
-
-    .seek-slider {
-      flex-grow: 1;
-      margin: 0 1rem;
-    }
-
-    .time {
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-  </style>
 </head>
 
 <body>
   <header>
-    <img src="images/logo.png" alt="OC SCRAPS logo" class="logo" />
-    <nav aria-label="Main Navigation">
-      <button onclick="showPage('home')">Home</button>
-      <button onclick="showPage('mixtape')">Mixtape</button>
-      <button onclick="showPage('media')">Media</button>
-      <button onclick="showPage('merch')">Merch</button>
-    </nav>
+    <img src="images/logo.png" alt="Logo" class="logo" />
   </header>
 
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#mixtape">Mixtape</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#merch">Merch</a></li>
+    </ul>
+  </nav>
+  
   <main>
-    <section id="home" class="page-section">
-      <div class="post">
-        <h2>Live Updates</h2>
-        <p>If you scanned this, hi. This is where we post our shit sounding music.</p>
-        <p>So if you were expecting kids from our school going absolutely ballistic on each other, uh sorry. That's not what this is.</p>
-        <p>Now go wash your hands.</p>
+    <section class="post" id="home">
+      <h2>hi</h2>
+      <p>If you scanned this, hi. This is where we post our shit sounding music.</p>
+      <p>So if you were expecting kids from our school going absolutely ballistic on eachother, uh sorry. That's not what this is.</p>
+      <p>Now go wash your hands.</p>
+    </section>
+
+    <section class="post" id="mixtape">
+      <h2>TRACK 1</h2>
+      <p>Performed by Syn</p>
+      <p>Composed by Syn</p>
+
+      <audio src="1.TRACK_1.mp3" class="custom-audio" preload="metadata"></audio>
+      <div class="audio-player">
+        <button class="play-pause">►</button>
+        <input type="range" class="seek-slider" value="0" step="1">
+        <div class="time">0:00 / 0:00</div>
       </div>
     </section>
 
-    <section id="mixtape" class="page-section hidden">
-      <div class="post">
-        <h2>TRACK 1</h2>
-        <p>Performed by Syn<br>Composed by Syn</p>
-        <audio src="1.TRACK_1.mp3" class="custom-audio" preload="metadata"></audio>
-        <div class="audio-player">
-          <button class="play-pause">►</button>
-          <input type="range" class="seek-slider" value="0" step="1">
-          <div class="time">0:00 / 0:00</div>
-        </div>
-      </div>
+    <section class="post" id="media">
+      <h2>OC SCRAPS</h2>
+      <p>This is OC SCRAPS.</p>
 
-      <div class="post">
-        <h2>OC SCRAPS</h2>
-        <p>This is OC SCRAPS.</p>
-        <audio src="2.OC_SCRAPS.mp3" class="custom-audio" preload="metadata"></audio>
-        <div class="audio-player">
-          <button class="play-pause">►</button>
-          <input type="range" class="seek-slider" value="0" step="1">
-          <div class="time">0:00 / 0:00</div>
-        </div>
-      </div>
-
-      <div class="post">
-        <h2>noose</h2>
-        <p>a diss track.</p>
-        <audio src="3.noose.mp3" class="custom-audio" preload="metadata"></audio>
-        <div class="audio-player">
-          <button class="play-pause">►</button>
-          <input type="range" class="seek-slider" value="0" step="1">
-          <div class="time">0:00 / 0:00</div>
-        </div>
-      </div>
-
-      <div class="post">
-        <h2>UP, DOWN</h2>
-        <p>this track is about a porn addict.</p>
-        <audio src="4.UP_DOWN.mp3" class="custom-audio" preload="metadata"></audio>
-        <div class="audio-player">
-          <button class="play-pause">►</button>
-          <input type="range" class="seek-slider" value="0" step="1">
-          <div class="time">0:00 / 0:00</div>
-        </div>
+      <audio src="2.OC_SCRAPS.mp3" class="custom-audio" preload="metadata"></audio>
+      <div class="audio-player">
+        <button class="play-pause">►</button>
+        <input type="range" class="seek-slider" value="0" step="1">
+        <div class="time">0:00 / 0:00</div>
       </div>
     </section>
 
-    <section id="media" class="page-section hidden">
-      <div class="post">
-        <h2>Media</h2>
-        <p>Coming soon: behind the scenes and more.</p>
+    <section class="post" id="merch">
+      <h2>noose</h2>
+      <p>a diss track.</p>
+
+      <audio src="3.noose.mp3" class="custom-audio" preload="metadata"></audio>
+      <div class="audio-player">
+        <button class="play-pause">►</button>
+        <input type="range" class="seek-slider" value="0" step="1">
+        <div class="time">0:00 / 0:00</div>
       </div>
     </section>
 
-    <section id="merch" class="page-section hidden">
-      <div class="post">
-        <h2>Merch</h2>
-        <p>We're making cool stuff on Redbubble (or Shopify eventually). Stay tuned!</p>
+    <section class="post">
+      <h2>UP, DOWN</h2>
+      <p>this track is about a porn addict.</p>
+
+      <audio src="4.UP_DOWN.mp3" class="custom-audio" preload="metadata"></audio>
+      <div class="audio-player">
+        <button class="play-pause">►</button>
+        <input type="range" class="seek-slider" value="0" step="1">
+        <div class="time">0:00 / 0:00</div>
       </div>
     </section>
+
   </main>
 
   <script>
-    function showPage(pageId) {
-      document.querySelectorAll('.page-section').forEach(sec => {
-        sec.classList.add('hidden');
-      });
-      document.getElementById(pageId).classList.remove('hidden');
-    }
-
     const audioEls = document.querySelectorAll('.custom-audio');
+
     audioEls.forEach((audioEl, index) => {
       const player = audioEl.nextElementSibling;
       const playPause = player.querySelector('.play-pause');
       const slider = player.querySelector('.seek-slider');
       const timeDisplay = player.querySelector('.time');
 
+      // Format seconds into mm:ss
       function formatTime(sec) {
         const m = Math.floor(sec / 60);
         const s = Math.floor(sec % 60);
         return `${m}:${s.toString().padStart(2, '0')}`;
       }
 
+      // Play/pause button click
       playPause.addEventListener('click', () => {
-        const isPlaying = !audioEl.paused && !audioEl.ended;
+        const isCurrentlyPlaying = !audioEl.paused && !audioEl.ended;
+
+        // Pause all others
         audioEls.forEach((a, i) => {
           a.pause();
           const btn = a.nextElementSibling.querySelector('.play-pause');
           if (btn) btn.textContent = '►';
         });
-        if (!isPlaying) {
+
+        if (!isCurrentlyPlaying) {
           audioEl.play();
           playPause.textContent = '❚❚';
         }
       });
 
+      // Update slider and time
       audioEl.addEventListener('timeupdate', () => {
         slider.max = audioEl.duration;
         slider.value = audioEl.currentTime;
+
         if (!isNaN(audioEl.duration)) {
           timeDisplay.textContent = `${formatTime(audioEl.currentTime)} / ${formatTime(audioEl.duration)}`;
         }
       });
 
+      // Seeking
       slider.addEventListener('input', () => {
         audioEl.currentTime = slider.value;
       });
 
+      // When track ends, play next
       audioEl.addEventListener('ended', () => {
         playPause.textContent = '►';
+
         const nextAudio = audioEls[index + 1];
         if (nextAudio) {
           const nextBtn = nextAudio.nextElementSibling.querySelector('.play-pause');
@@ -240,5 +143,6 @@
       });
     });
   </script>
+
 </body>
 </html>
