@@ -38,6 +38,16 @@ body::before {
   filter: blur(4px); /* Adjust blur strength here */
   z-index: -1; /* Behind everything */
 }
+  body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('/images/background_overlay.jpg') repeat;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: exclusion;
+}
     header {
       text-align: center;
       padding: 1rem;
