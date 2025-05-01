@@ -15,29 +15,21 @@
       src: url('fonts/positions.otf') format('opentype');
     }
 body {
-  margin: 0;
-  font-family: sans-serif;
-  color: #ccc;
-  padding: 1rem;
-  position: relative; /* Needed for the background layer */
-  z-index: 0; /* Establish stacking context */
-  overflow-x: hidden;
-}
-/* Blurred background layer */
-body::before {
-  content: '';
-  position: fixed; /* Covers entire screen and stays fixed */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('images/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(4px); /* Adjust blur strength here */
-  z-index: -1; /* Behind everything */
-}
+@font-face {
+      font-family: 'Fubbick';
+      src: url('fonts/Fubbick.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'Positions';
+      src: url('fonts/positions.otf') format('opentype');
+    }
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: monospace;
+      overflow-x: hidden;
+    }
     header {
       text-align: center;
       padding: 2rem;
@@ -46,7 +38,7 @@ body::before {
       border-bottom: 3px solid #f0f;
     }
     .logo {
-      width: 350px;
+      width: 270px;
       height: auto;
       margin-bottom: 1rem;
     }
