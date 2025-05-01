@@ -1,16 +1,18 @@
-@font-face {
-  font-family: 'Bright';
-  src: url('/fonts/bright.otf') format('opentype');
-}
+<style>
+  @font-face {
+    font-family: 'Bright';
+    src: url('/fonts/bright.otf') format('opentype');
+  }
 
-body {
-  margin: 0;
-  background: #000;
-  color: #fff;
-  font-family: monospace;
-  overflow-x: hidden;
-}
+  body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: monospace;
+    overflow-x: hidden;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bright', monospace;
-}
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bright', monospace;
+  }
+</style>
