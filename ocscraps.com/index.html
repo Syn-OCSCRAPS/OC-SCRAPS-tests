@@ -4,77 +4,77 @@
   <link rel="icon" href="images/OC.ico" type="image/x-icon">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OC SCRAPS MIXTAPE</title>
+  <title>OC SCRAPS</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header>
-    <img src="images/logo.png" alt="Logo" class="logo" />
+  <header class="site-header">
+    <img src="images/logo.png" alt="OC SCRAPS Logo" class="logo" />
+    <nav>
+      <a href="#home">Home</a>
+      <a href="/mixtape">Mixtape</a>
+      <a href="/media">Media</a>
+    </nav>
   </header>
-  
+
   <main>
-    <section class="post">
-      <h2>hi</h2>
-      <p>If you scanned this, hi. This is where we post our shit sounding music.</p>
-      <p>So if you were expecting kids from our school going absolutely ballistic on eachother, uh sorry. That's not what this is.</p>
-      <p>Now go wash your hands.</p>
+    <section class="feed-intro">
+      <h1>Welcome to OC SCRAPS</h1>
+      <p>This is the feed. It’s where we drop updates, previews, beats, and random dumb shit. Scroll down, listen up, and wash your hands.</p>
     </section>
 
-    <section class="post">
-      <h2>TRACK 1</h2>
-      <p>Performed by Syn</p>
-      <p>Composed by Syn</p>
+    <section class="feed">
+      <article class="post">
+        <h2>TRACK 1</h2>
+        <p><strong>Performed by:</strong> Syn</p>
+        <p><strong>Composed by:</strong> Syn</p>
+        <audio src="1.TRACK_1.mp3" class="custom-audio" preload="metadata"></audio>
+        <div class="audio-player">
+          <button class="play-pause">►</button>
+          <input type="range" class="seek-slider" value="0" step="1">
+          <div class="time">0:00 / 0:00</div>
+        </div>
+      </article>
 
-      <audio src="1.TRACK_1.mp3" class="custom-audio" preload="metadata"></audio>
-<div class="audio-player">
-  <button class="play-pause">►</button>
-  <input type="range" class="seek-slider" value="0" step="1">
-  <div class="time">0:00 / 0:00</div>
-</div>
+      <article class="post">
+        <h2>OC SCRAPS</h2>
+        <p>This is OC SCRAPS.</p>
+        <audio src="2.OC_SCRAPS.mp3" class="custom-audio" preload="metadata"></audio>
+        <div class="audio-player">
+          <button class="play-pause">►</button>
+          <input type="range" class="seek-slider" value="0" step="1">
+          <div class="time">0:00 / 0:00</div>
+        </div>
+      </article>
 
+      <article class="post">
+        <h2>noose</h2>
+        <p>a diss track.</p>
+        <audio src="3.noose.mp3" class="custom-audio" preload="metadata"></audio>
+        <div class="audio-player">
+          <button class="play-pause">►</button>
+          <input type="range" class="seek-slider" value="0" step="1">
+          <div class="time">0:00 / 0:00</div>
+        </div>
+      </article>
+
+      <article class="post">
+        <h2>UP, DOWN</h2>
+        <p>This track is about a porn addict.</p>
+        <audio src="4.UP_DOWN.mp3" class="custom-audio" preload="metadata"></audio>
+        <div class="audio-player">
+          <button class="play-pause">►</button>
+          <input type="range" class="seek-slider" value="0" step="1">
+          <div class="time">0:00 / 0:00</div>
+        </div>
+      </article>
     </section>
-
-    <section class="post">
-      <h2>OC SCRAPS</h2>
-      <p>This is OC SCRAPS.</p>
-
-      <audio src="2.OC_SCRAPS.mp3" class="custom-audio" preload="metadata"></audio>
-<div class="audio-player">
-  <button class="play-pause">►</button>
-  <input type="range" class="seek-slider" value="0" step="1">
-  <div class="time">0:00 / 0:00</div>
-</div>
-      
-   </section>
-
-    <section class="post">
-      <h2>noose</h2>
-      <p>a diss track.</p>
-
-      <audio src="3.noose.mp3" class="custom-audio" preload="metadata"></audio>
-<div class="audio-player">
-  <button class="play-pause">►</button>
-  <input type="range" class="seek-slider" value="0" step="1">
-  <div class="time">0:00 / 0:00</div>
-</div>
-
-    </section>
-
- <section class="post">
-      <h2>UP, DOWN</h2>
-      <p>this track is about a porn addict.</p>
-
-      <audio src="4.UP_DOWN.mp3" class="custom-audio" preload="metadata"></audio>
-<div class="audio-player">
-  <button class="play-pause">►</button>
-  <input type="range" class="seek-slider" value="0" step="1">
-  <div class="time">0:00 / 0:00</div>
-</div>
-
-    </section>
-    
   </main>
+
+  <footer>
+    <p>© OC SCRAPS. QR code takes you here. Keep up or miss out.</p>
+  </footer>
 
 <script>
   const audioEls = document.querySelectorAll('.custom-audio');
@@ -85,49 +85,39 @@
     const slider = player.querySelector('.seek-slider');
     const timeDisplay = player.querySelector('.time');
 
-    // Format seconds into mm:ss
     function formatTime(sec) {
       const m = Math.floor(sec / 60);
       const s = Math.floor(sec % 60);
       return `${m}:${s.toString().padStart(2, '0')}`;
     }
 
-    // Play/pause button click
     playPause.addEventListener('click', () => {
-      const isCurrentlyPlaying = !audioEl.paused && !audioEl.ended;
-
-      // Pause all others
+      const isPlaying = !audioEl.paused && !audioEl.ended;
       audioEls.forEach((a, i) => {
         a.pause();
         const btn = a.nextElementSibling.querySelector('.play-pause');
         if (btn) btn.textContent = '►';
       });
-
-      if (!isCurrentlyPlaying) {
+      if (!isPlaying) {
         audioEl.play();
         playPause.textContent = '❚❚';
       }
     });
 
-    // Update slider and time
     audioEl.addEventListener('timeupdate', () => {
       slider.max = audioEl.duration;
       slider.value = audioEl.currentTime;
-
       if (!isNaN(audioEl.duration)) {
         timeDisplay.textContent = `${formatTime(audioEl.currentTime)} / ${formatTime(audioEl.duration)}`;
       }
     });
 
-    // Seeking
     slider.addEventListener('input', () => {
       audioEl.currentTime = slider.value;
     });
 
-    // When track ends, play next
     audioEl.addEventListener('ended', () => {
       playPause.textContent = '►';
-
       const nextAudio = audioEls[index + 1];
       if (nextAudio) {
         const nextBtn = nextAudio.nextElementSibling.querySelector('.play-pause');
