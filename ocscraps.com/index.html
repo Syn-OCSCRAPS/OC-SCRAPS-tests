@@ -11,12 +11,30 @@
       src: url('fonts/Fubbick-Outline.otf') format('opentype');
     }
     body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: monospace;
-      overflow-x: hidden;
-    }
+  margin: 0;
+  font-family: sans-serif;
+  color: #000000;
+  padding: 1rem;
+  position: relative; /* Needed for the background layer */
+  z-index: 0; /* Establish stacking context */
+  overflow-x: hidden;
+}
+
+/* Blurred background layer */
+body::before {
+  content: '';
+  position: fixed; /* Covers entire screen and stays fixed */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(6px); /* Adjust blur strength here */
+  z-index: -1; /* Behind everything */
+}
     header {
       text-align: center;
       padding: 2rem;
