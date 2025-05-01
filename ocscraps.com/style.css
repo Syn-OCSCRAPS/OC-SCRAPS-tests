@@ -8,6 +8,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Blurred background layer */
 body::before {
   content: '';
   position: fixed;
@@ -45,46 +46,33 @@ header {
   height: auto;
 }
 
-/* Navbar */
 .navbar {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 1rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.navbar ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.navbar li {
-  display: inline;
-  margin-right: 2rem;
-}
-
-.navbar a {
-  color: #fff;
-  font-family: 'TitleFont', sans-serif;
-  font-size: 1.2rem;
+.nav-button {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
   text-decoration: none;
-  padding: 0.5rem;
-  transition: color 0.3s;
+  font-size: 1.2rem;
+  font-family: 'PostFont', sans-serif;
+  transition: background-color 0.2s ease;
 }
 
-.navbar a:hover {
-  color: #ccc;
+.nav-button:hover {
+  background-color: #333;
 }
 
 /* Main content */
 main {
   position: relative;
   max-width: 800px;
-  margin: 5rem auto 2rem auto; /* Adjust margin for the navbar */
+  margin: 2rem auto;
 }
 
 /* Posts */
@@ -93,8 +81,8 @@ main {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
   background-image: url('images/post-background.jpg');
   background-size: cover;
   background-position: center;
@@ -111,6 +99,7 @@ main {
   background: rgba(0, 0, 0, 0.6);
   z-index: 1;
   border-radius: 8px;
+  pointer-events: none;
 }
 
 .post * {
@@ -122,17 +111,13 @@ main {
   font-family: 'TitleFont', sans-serif;
   color: white;
   font-size: 2rem;
+  mix-blend-mode: exclusion;
 }
 
 .post p {
   font-family: 'PostFont', sans-serif;
   color: #FFFFFF;
-}
-
-/* Media */
-audio {
-  width: 100%;
-  margin-top: 0.5rem;
+  mix-blend-mode: exclusion;
 }
 
 .audio-player {
@@ -173,5 +158,5 @@ audio {
 }
 
 audio {
-  display: none; /* Hide default player */
+  display: none;
 }
