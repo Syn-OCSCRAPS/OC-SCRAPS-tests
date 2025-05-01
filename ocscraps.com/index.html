@@ -1,17 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="images/OC.ico" type="image/x-icon">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OC SCRAPS</title>
+  <link rel="icon" href="images/OC.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #f5f5f5;
+    }
+
+    header {
+      background-color: #000;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: #f5f5f5;
+      font-size: 1rem;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    nav button:hover {
+      opacity: 0.7;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .page-section {
+      display: none;
+    }
+
+    .page-section:not(.hidden) {
+      display: block;
+    }
+
+    .post {
+      margin-bottom: 3rem;
+      background-color: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .post h2 {
+      margin-top: 0;
+    }
+
+    .audio-player {
+      display: flex;
+      align-items: center;
+      margin-top: 0.75rem;
+    }
+
+    .audio-player button.play-pause {
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.4rem 0.6rem;
+      cursor: pointer;
+    }
+
+    .seek-slider {
+      flex-grow: 1;
+      margin: 0 1rem;
+    }
+
+    .time {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
 </head>
 
 <body>
   <header>
-    <img src="images/logo.png" alt="Logo" class="logo" />
-    <nav>
+    <img src="images/logo.png" alt="OC SCRAPS logo" class="logo" />
+    <nav aria-label="Main Navigation">
       <button onclick="showPage('home')">Home</button>
       <button onclick="showPage('mixtape')">Mixtape</button>
       <button onclick="showPage('media')">Media</button>
@@ -32,8 +125,7 @@
     <section id="mixtape" class="page-section hidden">
       <div class="post">
         <h2>TRACK 1</h2>
-        <p>Performed by Syn</p>
-        <p>Composed by Syn</p>
+        <p>Performed by Syn<br>Composed by Syn</p>
         <audio src="1.TRACK_1.mp3" class="custom-audio" preload="metadata"></audio>
         <div class="audio-player">
           <button class="play-pause">►</button>
