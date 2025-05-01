@@ -14,13 +14,29 @@
       font-family: 'Positions';
       src: url('fonts/positions.otf') format('opentype');
     }
-    body {
+body {
       margin: 0;
       background: #000;
       color: #fff;
       font-family: monospace;
       overflow-x: hidden;
     }
+
+/* Blurred background layer */
+body::before {
+  content: '';
+  position: fixed; /* Covers entire screen and stays fixed */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('images/background_home.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(1px); /* Adjust blur strength here */
+  z-index: -1; /* Behind everything */
+}
     header {
       text-align: center;
       padding: 2rem;
