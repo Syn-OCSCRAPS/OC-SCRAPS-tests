@@ -261,42 +261,64 @@ audio {
   <footer>
     <p>&copy; OC SCRAPS — good beats with bad lyrics.</p>
   </footer>
-  <script>
-  document.querySelectorAll('.audio-player').forEach((player, index) => {
-    const button = player.querySelector('.play-pause');
-    const slider = player.querySelector('.seek-slider');
-    const time = player.querySelector('.time');
-    const audio = document.querySelectorAll('audio')[index];
+<script>
+  const audioEls = document.querySelectorAll('.custom-audio');
 
-    const formatTime = (sec) => {
+  audioEls.forEach((audioEl, index) => {
+    const player = audioEl.nextElementSibling;
+    const playPause = player.querySelector('.play-pause');
+    const slider = player.querySelector('.seek-slider');
+    const timeDisplay = player.querySelector('.time');
+
+    // Format seconds into mm:ss
+    function formatTime(sec) {
       const m = Math.floor(sec / 60);
       const s = Math.floor(sec % 60);
       return `${m}:${s.toString().padStart(2, '0')}`;
-    };
+    }
 
-    button.addEventListener('click', () => {
-      if (audio.paused) {
-        document.querySelectorAll('audio').forEach(a => a.pause()); // Pause other tracks
-        audio.play();
-        button.textContent = '❚❚';
-      } else {
-        audio.pause();
-        button.textContent = '►';
+    // Play/pause button click
+    playPause.addEventListener('click', () => {
+      const isCurrentlyPlaying = !audioEl.paused && !audioEl.ended;
+
+      // Pause all others
+      audioEls.forEach((a, i) => {
+        a.pause();
+        const btn = a.nextElementSibling.querySelector('.play-pause');
+        if (btn) btn.textContent = '►';
+      });
+
+      if (!isCurrentlyPlaying) {
+        audioEl.play();
+        playPause.textContent = '❚❚';
       }
     });
 
-    audio.addEventListener('loadedmetadata', () => {
-      slider.max = Math.floor(audio.duration);
-      time.textContent = `0:00 / ${formatTime(audio.duration)}`;
+    // Update slider and time
+    audioEl.addEventListener('timeupdate', () => {
+      slider.max = audioEl.duration;
+      slider.value = audioEl.currentTime;
+
+      if (!isNaN(audioEl.duration)) {
+        timeDisplay.textContent = `${formatTime(audioEl.currentTime)} / ${formatTime(audioEl.duration)}`;
+      }
     });
 
-    audio.addEventListener('timeupdate', () => {
-      slider.value = audio.currentTime;
-      time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
-    });
-
+    // Seeking
     slider.addEventListener('input', () => {
-      audio.currentTime = slider.value;
+      audioEl.currentTime = slider.value;
+    });
+
+    // When track ends, play next
+    audioEl.addEventListener('ended', () => {
+      playPause.textContent = '►';
+
+      const nextAudio = audioEls[index + 1];
+      if (nextAudio) {
+        const nextBtn = nextAudio.nextElementSibling.querySelector('.play-pause');
+        nextAudio.play();
+        if (nextBtn) nextBtn.textContent = '❚❚';
+      }
     });
   });
 </script>
