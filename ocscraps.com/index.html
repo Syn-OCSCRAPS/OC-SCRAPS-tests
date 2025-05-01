@@ -34,7 +34,7 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(1px); /* Adjust blur strength here */
+  filter: blur(5px); /* Adjust blur strength here */
   z-index: -1; /* Behind everything */
 }
     header {
@@ -42,9 +42,6 @@ body::before {
       padding: 2rem;
       font-size: 2.5rem;
       background: #000;
-      mix-blend-mode: difference; /* or 'difference', 'lighten', etc. */
-      backdrop-filter: contrast(180%) saturate(150%) blur(2px); /* adds distortion */
-      box-shadow: 0 0 10px #000, 0 0 20px #000;
       border-bottom: 2px solid #fff;
     }
     .logo {
