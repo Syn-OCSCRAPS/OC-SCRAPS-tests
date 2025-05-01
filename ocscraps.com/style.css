@@ -1,18 +1,35 @@
 <style>
-  @font-face {
-    font-family: 'Bright';
-    src: url('/fonts/bright.otf') format('opentype');
-  }
+@font-face {
+  font-family: 'Bright';
+  src: url('/fonts/bright.otf') format('opentype');
+}
 
-  body {
-    margin: 0;
-    background: #000;
-    color: #fff;
-    font-family: monospace;
-    overflow-x: hidden;
-  }
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: monospace;
+  overflow-x: hidden;
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bright', monospace;
-  }
+header {
+  text-align: center;
+  padding: 2rem;
+  font-size: 2.5rem;
+  background: #111;
+  border-bottom: 3px solid #f0f;
+}
+
+.glitchy {
+  font-family: 'Bright', monospace; /* Apply the font here */
+  font-size: 1.5rem;
+  color: #0ff;
+  text-shadow: 2px 0 red, -2px 0 blue;
+  animation: glitch 1s infinite;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bright', monospace; /* You can also add this for the page headings */
+}
+
 </style>
