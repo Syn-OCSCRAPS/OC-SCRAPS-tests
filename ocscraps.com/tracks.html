@@ -261,5 +261,44 @@ audio {
   <footer>
     <p>&copy; OC SCRAPS — good beats with bad lyrics.</p>
   </footer>
+  <script>
+  document.querySelectorAll('.audio-player').forEach((player, index) => {
+    const button = player.querySelector('.play-pause');
+    const slider = player.querySelector('.seek-slider');
+    const time = player.querySelector('.time');
+    const audio = document.querySelectorAll('audio')[index];
+
+    const formatTime = (sec) => {
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${s.toString().padStart(2, '0')}`;
+    };
+
+    button.addEventListener('click', () => {
+      if (audio.paused) {
+        document.querySelectorAll('audio').forEach(a => a.pause()); // Pause other tracks
+        audio.play();
+        button.textContent = '❚❚';
+      } else {
+        audio.pause();
+        button.textContent = '►';
+      }
+    });
+
+    audio.addEventListener('loadedmetadata', () => {
+      slider.max = Math.floor(audio.duration);
+      time.textContent = `0:00 / ${formatTime(audio.duration)}`;
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      slider.value = audio.currentTime;
+      time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+    });
+
+    slider.addEventListener('input', () => {
+      audio.currentTime = slider.value;
+    });
+  });
+</script>
 </body>
 </html>
