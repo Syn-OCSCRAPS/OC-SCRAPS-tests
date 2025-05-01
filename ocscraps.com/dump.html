@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OC SCRAPS - DUMP</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: monospace;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      font-size: 2.5rem;
+      background: #111;
+      border-bottom: 3px solid #f0f;
+    }
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    nav {
+      text-align: center;
+      background: #222;
+      padding: 1rem;
+    }
+    nav a {
+      color: #f0f;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .glitchy {
+      font-size: 1.5rem;
+      color: #0ff;
+      text-shadow: 2px 0 red, -2px 0 blue;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red, -2px 0 blue; }
+      20% { text-shadow: -2px 0 red, 2px 0 blue; }
+      40% { text-shadow: 2px 2px red, -2px -2px blue; }
+      60% { text-shadow: -2px -2px red, 2px 2px blue; }
+      80% { text-shadow: 2px -2px red, -2px 2px blue; }
+      100% { text-shadow: 2px 0 red, -2px 0 blue; }
+    }
+    .player {
+      margin: 2rem auto;
+      width: 80%;
+      max-width: 600px;
+      background: #111;
+      padding: 1rem;
+      border: 2px dashed #0ff;
+    }
+    .rant {
+      padding: 1rem 2rem;
+      background: #111;
+      margin: 2rem;
+      border-left: 5px solid #f0f;
+    }
+    .store-item {
+      background: #111;
+      margin: 2rem;
+      padding: 1rem;
+      border: 1px solid #0ff;
+    }
+    .store-item img {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .store-item button {
+      background: #f0f;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      background: #111;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/images/logo.png" class="logo" alt="OC SCRAPS logo">
+    <div class="glitchy">WELCOME TO OC SCRAPS</div>
+  </header>
+  <nav>
+    <a href="/index.html">HOME</a>
+    <a href="/tracks.html">TRACKS</a>
+    <a href="/dump.html">DUMP</a>
+    <a href="/store.html">STORE</a>
+  </nav>
+  <main>
+    <section class="player">
+      <h2>TRACKS</h2>
+      <audio controls src="/audio/track1.mp3"></audio><br>
+      <audio controls src="/audio/track2.mp3"></audio><br>
+      <audio controls src="/audio/track3.mp3"></audio><br>
+      <audio controls src="/audio/track4.mp3"></audio>
+    </section>
+
+    <section class="rant">
+      <h2>DUMP POST</h2>
+      <p>yo this site not even finished yet. come back later. maybe i’ll drop some more trash here soon.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; OC SCRAPS — built by Tyson on some late night noise</p>
+  </footer>
+</body>
+</html>
