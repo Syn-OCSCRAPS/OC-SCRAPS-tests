@@ -12,8 +12,6 @@
     }
     body {
   margin: 0;
-  font-family: sans-serif;
-  color: #000000;
   padding: 1rem;
   position: relative; /* Needed for the background layer */
   z-index: 0; /* Establish stacking context */
@@ -32,7 +30,7 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(6px); /* Adjust blur strength here */
+  filter: blur(4px); /* Adjust blur strength here */
   z-index: -1; /* Behind everything */
 }
     header {
@@ -43,7 +41,7 @@ body::before {
       border-bottom: 3px solid #f0f;
     }
     .logo {
-      width: 120px;
+      width: 350px;
       height: auto;
       margin-bottom: 1rem;
     }
@@ -107,7 +105,6 @@ body::before {
 <body>
   <header>
     <img src="/images/logo.png" class="logo" alt="OC SCRAPS logo">
-    <div class="glitchy">WELCOME TO OC SCRAPS</div>
   </header>
   <nav>
     <a href="/index.html">HOME</a>
