@@ -42,6 +42,9 @@ body::before {
       padding: 2rem;
       font-size: 2.5rem;
       background: #111;
+      mix-blend-mode: exclusion; /* or 'difference', 'lighten', etc. */
+      backdrop-filter: contrast(180%) saturate(150%) blur(2px); /* adds distortion */
+      box-shadow: 0 0 10px #000, 0 0 20px #000;
       border-bottom: 2px solid #fff;
     }
     .logo {
