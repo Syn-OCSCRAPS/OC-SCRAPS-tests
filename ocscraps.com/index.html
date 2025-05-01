@@ -4,7 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OC SCRAPS</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: monospace;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      font-size: 2.5rem;
+      background: #111;
+      border-bottom: 3px solid #f0f;
+    }
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    nav {
+      text-align: center;
+      background: #222;
+      padding: 1rem;
+    }
+    nav a {
+      color: #f0f;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .glitchy {
+      font-size: 1.5rem;
+      color: #0ff;
+      text-shadow: 2px 0 red, -2px 0 blue;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red, -2px 0 blue; }
+      20% { text-shadow: -2px 0 red, 2px 0 blue; }
+      40% { text-shadow: 2px 2px red, -2px -2px blue; }
+      60% { text-shadow: -2px -2px red, 2px 2px blue; }
+      80% { text-shadow: 2px -2px red, -2px 2px blue; }
+      100% { text-shadow: 2px 0 red, -2px 0 blue; }
+    }
+    .intro {
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 1rem;
+      background: #111;
+      border: 1px solid #f0f;
+      text-align: center;
+    }
+    .blog-post {
+      background: #111;
+      margin: 2rem auto;
+      padding: 1rem;
+      border: 1px solid #f0f;
+      max-width: 700px;
+    }
+    .blog-post h3 {
+      margin-bottom: 1rem;
+    }
+    .blog-post p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      background: #111;
+    }
+  </style>
 </head>
 <body>
   <header>
