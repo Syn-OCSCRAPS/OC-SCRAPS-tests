@@ -107,10 +107,56 @@ body {
       color: #ccc;
       font-size: 0.9rem;
     }
-    audio {
-      width: 100%;
-      margin-top: 1rem;
-    }
+audio {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+iframe {
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+
+.play-pause {
+  background: white;
+  color: black;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.play-pause:hover {
+  background: #ccc;
+}
+
+.seek-slider {
+  flex: 1;
+  height: 4px;
+  background: white;
+  outline: none;
+  cursor: pointer;
+  accent-color: white;
+}
+
+audio {
+  display: none; /* Hide default player */
+}
     footer {
       text-align: center;
       padding: 2rem;
@@ -134,41 +180,49 @@ body {
     <a href="/store.html">STORE</a>
   </nav>
   <main>
+    
     <section class="track">
       <h3>1. Introspective Introduction</h3>
       <p>Artist: Syn</p>
       <p>i thought it would be cool.</p>
-      <audio controls>
-        <source src="/audio/1.introspective_introduction.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
+      <audio src="1.introspective_introduction.mp3" class="custom-audio" preload="metadata"></audio>
+<div class="audio-player">
+  <button class="play-pause">►</button>
+  <input type="range" class="seek-slider" value="0" step="1">
+  <div class="time">0:00 / 0:00</div>
     </section>
+    
     <section class="track">
       <h3>2. OC SCRAPS</h3>
       <p>Artist: Syn</p>
       <p>is this a prequel?</p>
-      <audio controls>
-        <source src="/audio/2.oc_scraps.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
+      <audio src="2.oc_scraps.mp3" class="custom-audio" preload="metadata"></audio>
+<div class="audio-player">
+  <button class="play-pause">►</button>
+  <input type="range" class="seek-slider" value="0" step="1">
+  <div class="time">0:00 / 0:00</div>
     </section>
+    
     <section class="track">
       <h3>3. noose</h3>
       <p>Artist: Syn</p>
       <p>expel this guy, not me.</p>
-      <audio controls>
-        <source src="/audio/3.noose.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
+      <audio src="3.noose.mp3" class="custom-audio" preload="metadata"></audio>
+<div class="audio-player">
+  <button class="play-pause">►</button>
+  <input type="range" class="seek-slider" value="0" step="1">
+  <div class="time">0:00 / 0:00</div>
     </section>
+    
     <section class="track">
       <h3>4. UP DOWN</h3>
       <p>Artist: Syn</p>
       <p>this track is about a porn addict.</p>
-      <audio controls>
-        <source src="/audio/4.up_down.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
+      <audio src="4.up_down.mp3" class="custom-audio" preload="metadata"></audio>
+<div class="audio-player">
+  <button class="play-pause">►</button>
+  <input type="range" class="seek-slider" value="0" step="1">
+  <div class="time">0:00 / 0:00</div>
     </section>
     <!-- Add more tracks as needed -->
   </main>
