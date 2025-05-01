@@ -11,27 +11,23 @@
 <body>
   <header>
     <img src="images/logo.png" alt="Logo" class="logo" />
+    <nav class="navbar">
+      <a href="#home" class="nav-button">Home</a>
+      <a href="#mixtape" class="nav-button">Mixtape</a>
+      <a href="#media" class="nav-button">Media</a>
+      <a href="#merch" class="nav-button">Merch</a>
+    </nav>
   </header>
-
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#mixtape">Mixtape</a></li>
-      <li><a href="#media">Media</a></li>
-      <li><a href="#merch">Merch</a></li>
-    </ul>
-  </nav>
   
   <main>
-    <section class="post" id="home">
+    <section id="home" class="post">
       <h2>hi</h2>
       <p>If you scanned this, hi. This is where we post our shit sounding music.</p>
       <p>So if you were expecting kids from our school going absolutely ballistic on eachother, uh sorry. That's not what this is.</p>
       <p>Now go wash your hands.</p>
     </section>
 
-    <section class="post" id="mixtape">
+    <section id="mixtape" class="post">
       <h2>TRACK 1</h2>
       <p>Performed by Syn</p>
       <p>Composed by Syn</p>
@@ -44,7 +40,7 @@
       </div>
     </section>
 
-    <section class="post" id="media">
+    <section id="media" class="post">
       <h2>OC SCRAPS</h2>
       <p>This is OC SCRAPS.</p>
 
@@ -56,21 +52,9 @@
       </div>
     </section>
 
-    <section class="post" id="merch">
-      <h2>noose</h2>
-      <p>a diss track.</p>
-
-      <audio src="3.noose.mp3" class="custom-audio" preload="metadata"></audio>
-      <div class="audio-player">
-        <button class="play-pause">►</button>
-        <input type="range" class="seek-slider" value="0" step="1">
-        <div class="time">0:00 / 0:00</div>
-      </div>
-    </section>
-
-    <section class="post">
+    <section id="merch" class="post">
       <h2>UP, DOWN</h2>
-      <p>this track is about a porn addict.</p>
+      <p>This track is about a porn addict.</p>
 
       <audio src="4.UP_DOWN.mp3" class="custom-audio" preload="metadata"></audio>
       <div class="audio-player">
@@ -79,7 +63,6 @@
         <div class="time">0:00 / 0:00</div>
       </div>
     </section>
-
   </main>
 
   <script>
@@ -143,6 +126,5 @@
       });
     });
   </script>
-
 </body>
 </html>
