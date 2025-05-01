@@ -79,14 +79,14 @@ body::before {
       100% { text-shadow: 2px 0 red, -2px 0 blue; }
     }
     .intro {
-  max-width: 700px;
+  max-width: 10000px;
   margin: 3rem auto;
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent */
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent */
   color: #000;
   border: 0px solid #f0f;
   text-align: center;
-  mix-blend-mode: exclusion; /* or 'difference', 'lighten', etc. */
+  mix-blend-mode: difference; /* or 'difference', 'lighten', etc. */
   backdrop-filter: contrast(180%) saturate(150%) blur(2px); /* adds distortion */
   box-shadow: 0 0 10px #000, 0 0 20px #000;
 }
