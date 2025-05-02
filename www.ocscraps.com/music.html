@@ -47,17 +47,19 @@
       cursor: pointer;
     }
     .audio-controls {
-      position: absolute;
-      bottom: 0;
-      left: 300px;
-      right: 0;
-      display: flex;
-      align-items: center;
-      padding: 0.5rem 1rem;
-      background: #2b2b2b;
-      border-top: 1px solid #444;
-      gap: 1rem;
-    }
+  position: absolute;
+  bottom: 0;
+  left: 300px; /* ← this should match album-art-fixed’s width */
+  right: 0;
+  height: 60px; /* optional: ensure it doesn't grow if content inside changes */
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #2b2b2b;
+  border-top: 1px solid #444;
+  gap: 1rem;
+  box-sizing: border-box;
+}
     #progressBar {
       flex: 1;
     }
