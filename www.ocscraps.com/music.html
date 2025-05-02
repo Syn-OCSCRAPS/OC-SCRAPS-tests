@@ -37,7 +37,7 @@
       flex: 1;
       overflow-y: auto;
       padding: 1rem;
-      margin-bottom: 60px; /* leave room for audio controls */
+      margin-bottom: 60px;
     }
     .track-scroll ul {
       list-style: none;
@@ -72,6 +72,27 @@
       flex: 2;
       font-size: 0.9rem;
       opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .music-player-box {
+        flex-direction: column;
+        height: auto;
+      }
+      .album-art-fixed,
+      .track-scroll {
+        width: 100%;
+        height: auto;
+      }
+      .album-art-fixed {
+        max-height: 300px;
+      }
+      .audio-controls {
+        position: static;
+        flex-wrap: wrap;
+        left: 0;
+        width: 100%;
+      }
     }
   </style>
 </head>
