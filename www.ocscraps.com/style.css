@@ -10,19 +10,25 @@ nav a { margin-left: 1em; text-decoration: none; color: #00ff99; font-weight: bo
 
 .hero p { font-size: 1.2em; color: #333; }
 
-.music-player { display: flex; background: #2a2a2a; border-radius: 20px; padding: 2em; margin: 2em; color: #f0f0f0; align-items: center; flex-wrap: wrap; }
+.music-player-box { display: flex; background: #2a2a2a; border-radius: 20px; margin: 2em; overflow: hidden; height: 240px; color: #f0f0f0; }
 
-.album-art img { width: 200px; height: 200px; object-fit: cover; border-radius: 16px; box-shadow: 0 0 10px rgba(0,0,0,0.4); }
+.album-art-fixed { flex: 0 0 240px; height: 100%; }
 
-.track-info { flex: 1; margin-left: 2em; }
+.album-art-fixed img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px 0 0 20px; }
 
-.track-info h2 { font-family: 'Anton', sans-serif; color: #00ff99; }
+.track-scroll { flex: 1; overflow-y: auto; padding: 1em; background: #1d1d1d; }
 
-.track-info ul { list-style: none; padding: 0; margin-top: 1em; }
+.track-scroll ul { list-style: none; padding: 0; margin: 0; }
 
-.track-info li { margin-bottom: 0.5em; font-size: 1.1em; }
+.track-scroll li { padding: 0.75em 1em; margin-bottom: 0.5em; border-radius: 10px; background: #333; cursor: pointer; transition: background 0.3s; }
+
+.track-scroll li:hover { background: #444; }
+
+.track-scroll li span { font-size: 0.9em; color: #bbb; }
 
 .audio-controls { text-align: center; padding: 1em; }
 
-audio { width: 80%; max-width: 600px; border-radius: 10px; margin-top: 1em; }
+.audio-controls button { background: none; border: none; font-size: 2em; margin: 0 1em; cursor: pointer; color: #00ff99; }
+
+#audioPlayer { display: none; }
 
