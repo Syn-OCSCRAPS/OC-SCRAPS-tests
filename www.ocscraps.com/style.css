@@ -42,6 +42,16 @@ nav a { margin-left: 1em; text-decoration: none; color: #00ff99; font-weight: bo
   p {
     font-family: 'AveriaSerifItalic', serif;
   }
+@font-face {
+    font-family: 'AveriaSerifBold';
+    src: url('fonts/AveriaSerif-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  a {
+    font-family: 'AveriaSerifBold', serif;
+  }
 
 @media (max-width: 768px) {
   .music-player-box {
