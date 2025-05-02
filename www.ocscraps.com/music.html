@@ -17,25 +17,67 @@
     </nav>
   </header>
   <main>
-    <section class="music-player">
-      <div class="album-art">
+    <section class="music-player-box">
+      <div class="album-art-fixed">
         <img src="assets/sample-album.png" alt="Album Cover">
       </div>
-      <div class="track-info">
-        <h2>SCRAP TUNES Vol. 1</h2>
-        <ul>
-          <li><strong>Track 1:</strong> Dumpster Dreams — OC</li>
-          <li><strong>Track 2:</strong> Leftovers — OC & Bones</li>
-          <li><strong>Track 3:</strong> Moldy Gold — OC</li>
+      <div class="track-scroll">
+        <ul id="trackList">
+          <li data-src="assets/track1.mp3"><strong>Dumpster Dreams</strong><br><span>OC</span></li>
+          <li data-src="assets/track2.mp3"><strong>Leftovers</strong><br><span>OC & Bones</span></li>
+          <li data-src="assets/track3.mp3"><strong>Moldy Gold</strong><br><span>OC</span></li>
         </ul>
       </div>
     </section>
     <section class="audio-controls">
-      <audio controls>
-        <source src="assets/sample-track.mp3" type="audio/mpeg">
+      <button id="prevBtn">⏮️</button>
+      <button id="playPause">▶️</button>
+      <button id="nextBtn">⏭️</button>
+      <audio id="audioPlayer">
+        <source src="assets/track1.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-    </section>
+    </section><script>
+  const tracks = document.querySelectorAll('#trackList li');
+  const audio = document.getElementById('audioPlayer');
+  const playPause = document.getElementById('playPause');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let currentTrack = 0;
+
+  function loadTrack(index) {
+    const src = tracks[index].getAttribute('data-src');
+    audio.src = src;
+    audio.play();
+    playPause.textContent = '⏸️';
+    currentTrack = index;
+  }
+
+  tracks.forEach((track, i) => {
+    track.addEventListener('click', () => loadTrack(i));
+  });
+
+  playPause.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      playPause.textContent = '⏸️';
+    } else {
+      audio.pause();
+      playPause.textContent = '▶️';
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentTrack = (currentTrack + 1) % tracks.length;
+    loadTrack(currentTrack);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+    loadTrack(currentTrack);
+  });
+</script>
+
   </main>
 </body>
-</html>
+</html/
