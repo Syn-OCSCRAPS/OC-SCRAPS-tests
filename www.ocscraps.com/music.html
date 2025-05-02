@@ -73,7 +73,12 @@
       font-size: 0.9rem;
       opacity: 0.8;
     }
-
+    #timeDisplay {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      min-width: 80px;
+      text-align: right;
+    }
     @media (max-width: 768px) {
       .music-player-box {
         flex-direction: column;
@@ -98,9 +103,7 @@
 </head>
 <body>
   <header>
-    <a href="index.html">
-      <img src="assets/ocscraps-white.png" alt="OC SCRAPS Logo" style="width: 100%; max-width: 300px;">
-    </a>
+    <h1>OC SCRAPS</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="music.html">Music</a>
@@ -127,6 +130,7 @@
         <button id="playPause">▶️</button>
         <button id="nextBtn">⏭️</button>
         <input type="range" id="progressBar" value="0" min="0" max="100" />
+        <div id="timeDisplay">0:00 / 0:00</div>
         <audio id="audioPlayer">
           <source src="" type="audio/mpeg">
           Your browser does not support the audio element.
@@ -142,7 +146,14 @@
       const progressBar = document.getElementById('progressBar');
       const currentTrackName = document.getElementById('currentTrackName');
       const albumArt = document.getElementById('albumArt');
+      const timeDisplay = document.getElementById('timeDisplay');
       let currentTrack = 0;
+
+      function formatTime(time) {
+        const minutes = Math.floor(time / 60) || 0;
+        const seconds = Math.floor(time % 60) || 0;
+        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+      }
 
       function loadTrack(index) {
         tracks.forEach(t => t.classList.remove('active'));
@@ -161,6 +172,7 @@
         currentTrackName.textContent = name;
         albumArt.src = img;
         currentTrack = index;
+        localStorage.setItem('lastTrack', index);
       }
 
       tracks.forEach((track, i) => {
@@ -189,11 +201,23 @@
 
       audio.addEventListener('timeupdate', () => {
         progressBar.value = (audio.currentTime / audio.duration) * 100 || 0;
+        timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
       });
 
       progressBar.addEventListener('input', () => {
         audio.currentTime = (progressBar.value / 100) * audio.duration;
       });
+
+      audio.addEventListener('ended', () => {
+        currentTrack = (currentTrack + 1) % tracks.length;
+        loadTrack(currentTrack);
+      });
+
+      // Load last played track if available
+      const savedTrack = localStorage.getItem('lastTrack');
+      if (savedTrack !== null) {
+        loadTrack(parseInt(savedTrack));
+      }
     </script>
   </main>
 </body>
