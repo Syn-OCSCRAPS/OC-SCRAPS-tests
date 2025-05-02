@@ -32,6 +32,17 @@ nav a { margin-left: 1em; text-decoration: none; color: #00ff99; font-weight: bo
 
 #audioPlayer { display: none; }
 
+@font-face {
+    font-family: 'AveriaSerifItalic';
+    src: url('fonts/AveriaSerif-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  p {
+    font-family: 'AveriaSerifItalic', serif;
+  }
+
 @media (max-width: 768px) {
   .music-player-box {
     flex-direction: column;
