@@ -6,100 +6,6 @@
   <title>OC SCRAPS — Home</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-    }
-
-    header {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-    }
-
-    header a.logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #000;
-      font-weight: bold;
-    }
-
-    .menu-toggle {
-      position: absolute;
-      left: 20px;
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 20px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 1001;
-    }
-
-    .menu-toggle span {
-      height: 3px;
-      background: #000;
-      border-radius: 2px;
-      transition: 0.3s;
-    }
-
-    /* Sidebar Navigation */
-    .side-nav {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: #fff;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-      display: flex;
-      flex-direction: column;
-      padding: 80px 20px 20px;
-      gap: 20px;
-      transition: left 0.3s ease;
-      z-index: 1000;
-    }
-
-    .side-nav.show {
-      left: 0;
-    }
-
-    .side-nav::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: #000;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
-      nav {
-        display: none;
-      }
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -109,7 +15,7 @@
       <span></span>
     </button>
     <a href="index.html" class="logo">
-      <img src="assets/ocscrapslogo.png" alt="OC SCRAPS Logo" style="width: 100%; max-width: 300px;">
+      <img src="assets/ocscrapslogo.png" alt="OC SCRAPS Logo" />
     </a>
     <nav class="side-nav" id="sideNav">
       <a href="index.html">Home</a>
@@ -122,10 +28,10 @@
   <main>
     <section class="hero">
       <h2>
-        <img src="assets/ocscrapsmixtape.png" alt="OC SCRAPS Mixtape" style="width: 100%; max-width: 300px;">
+        <img src="assets/ocscrapsmixtape.png" alt="OC SCRAPS Mixtape" />
       </h2>
       <a href="music.html">
-        <img src="assets/1.album_cover.jpg" alt="OC Scraps Mixtape Cover" style="width: 100%; max-width: 500px; margin-top: 20px;">
+        <img src="assets/1.album_cover.jpg" alt="OC Scraps Mixtape Cover" />
       </a>
       <p>No, it's not students from our school going ape shit crazy on eachother.</p>
       <p>Now go wash your hands.</p>
