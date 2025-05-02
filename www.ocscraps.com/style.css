@@ -38,17 +38,14 @@ nav a { margin-left: 1em; text-decoration: none; color: #00ff99; font-weight: bo
     height: auto;
   }
 
-  .album-art-fixed {
-    width: 100%;
-    max-height: 300px;
-  }
-
+  .album-art-fixed,
   .track-scroll {
     width: 100%;
     height: auto;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    box-sizing: border-box;
+  }
+
+  .album-art-fixed {
+    max-height: 300px;
   }
 
   .audio-controls {
@@ -58,17 +55,20 @@ nav a { margin-left: 1em; text-decoration: none; color: #00ff99; font-weight: bo
     width: 100%;
     box-sizing: border-box;
     gap: 0.5rem;
+    padding: 1rem;
   }
 
-  .audio-controls button,
-  .audio-controls input,
-  #currentTrackInfo {
+  .audio-controls > * {
     flex: 1 1 100%;
     min-width: 0;
   }
 
   #progressBar {
     width: 100%;
+  }
+
+  #currentTrackInfo {
+    text-align: center;
   }
 }
 
