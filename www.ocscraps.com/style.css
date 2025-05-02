@@ -1,7 +1,7 @@
 body { margin: 0; font-family: 'Inter', sans-serif; background-color: #f9f4ef; color: #111; }
 header {
-  background: #ffffff;
-  color: #f2f2f2;
+  background: #000000;
+  color: #000000;
   padding: 1em;
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@ nav {
 }
 
 
-nav a { margin-left: 1em; text-decoration: none; color: #000000; font-weight: bold; }
+nav a { margin-left: 1em; text-decoration: none; color: #ffffff; font-weight: bold; }
 
 .hero { background: url('assets/grainy-bg.png') center/cover no-repeat; text-align: center; padding: 4em 2em; }
 
