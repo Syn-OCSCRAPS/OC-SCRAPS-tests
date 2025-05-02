@@ -9,3 +9,20 @@ nav a { margin-left: 1em; text-decoration: none; color: #00ff99; font-weight: bo
 .hero h2 { font-family: 'Anton', sans-serif; font-size: 3em; color: #ff69b4; }
 
 .hero p { font-size: 1.2em; color: #333; }
+
+.music-player { display: flex; background: #2a2a2a; border-radius: 20px; padding: 2em; margin: 2em; color: #f0f0f0; align-items: center; flex-wrap: wrap; }
+
+.album-art img { width: 200px; height: 200px; object-fit: cover; border-radius: 16px; box-shadow: 0 0 10px rgba(0,0,0,0.4); }
+
+.track-info { flex: 1; margin-left: 2em; }
+
+.track-info h2 { font-family: 'Anton', sans-serif; color: #00ff99; }
+
+.track-info ul { list-style: none; padding: 0; margin-top: 1em; }
+
+.track-info li { margin-bottom: 0.5em; font-size: 1.1em; }
+
+.audio-controls { text-align: center; padding: 1em; }
+
+audio { width: 80%; max-width: 600px; border-radius: 10px; margin-top: 1em; }
+
