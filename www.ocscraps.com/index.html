@@ -6,20 +6,89 @@
   <title>OC SCRAPS — Home</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      position: relative;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      background: #000;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <!-- Replace the text in h1 with an image -->
     <a href="index.html">
       <img src="assets/ocscrapslogo.png" alt="OC SCRAPS Logo" style="width: 100%; max-width: 300px;">
     </a>
-    <nav>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="nav">
       <a href="index.html">Home</a>
       <a href="music.html">Music</a>
       <a href="about.html">About</a>
       <a href="merch.html">Merch</a>
     </nav>
   </header>
+
   <main>
     <section class="hero">
       <h2>
@@ -32,5 +101,11 @@
       <p>Now go wash your hands.</p>
     </section>
   </main>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav').classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
