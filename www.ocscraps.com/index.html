@@ -1,119 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OC SCRAPS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Press Start 2P', monospace;
-      background-color: #000;
-      color: #00ffcc;
-      text-align: center;
-      padding: 20px;
-    }
-    header {
-      font-size: 1.5em;
-      color: #ff00aa;
-      border: 2px dashed #ff00aa;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    nav {
-      margin-bottom: 30px;
-    }
-    nav a {
-      color: #00ffcc;
-      text-decoration: none;
-      margin: 0 10px;
-      padding: 10px;
-      border: 1px solid #00ffcc;
-      display: inline-block;
-      margin-top: 10px;
-    }
-    nav a:hover {
-      background-color: #00ffcc;
-      color: #000;
-    }
-    section {
-      background: #111;
-      border: 2px solid #00ffcc;
-      margin: 30px auto;
-      max-width: 600px;
-      padding: 20px;
-      text-align: left;
-    }
-    h2 {
-      color: #ff00aa;
-      font-size: 1em;
-      text-align: center;
-    }
-    audio {
-      width: 100%;
-    }
-    img {
-      max-width: 100%;
-      border: 2px solid #ff00aa;
-      margin-top: 10px;
-    }
-    .loading {
-      font-size: 0.9em;
-      margin-top: 50px;
-      animation: flicker 1.5s infinite;
-    }
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-  </style>
+  <title>OC SCRAPS — Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="loading">LOADING OC SCRAPS...</div>
   <header>
-    OC SCRAPS 🧠💾
+    <h1>OC SCRAPS</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="music.html">Music</a>
+      <a href="about.html">About</a>
+      <a href="merch.html">Merch</a>
+    </nav>
   </header>
-  <nav>
-    <a href="#home">[HOME]</a>
-    <a href="#about">[ABOUT]</a>
-    <a href="#mixtape">[MIXTAPE]</a>
-    <a href="#merch">[MERCH]</a>
-  </nav>
-
-  <section id="home">
-    <h2>WELCOME TO OC SCRAPS</h2>
-    <p>A retro dump of noise, ideas, and digital dust. 🌀</p>
-    <p><em>Scroll down or pick a link...</em></p>
-  </section>
-
-  <section id="about">
-    <h2>ABOUT</h2>
-    <p>
-      OC SCRAPS is a glitchy little time capsule of student-made madness. Built in the back of class, fueled by loud thoughts, bad sleep, and good tunes.
-    </p>
-    <p>
-      We make things. Some of it works. Some of it doesn't. That's the fun.
-    </p>
-  </section>
-
-  <section id="mixtape">
-    <h2>MIXTAPE</h2>
-    <p><strong>"Detention Thoughts" — Stream below:</strong></p>
-    <audio controls>
-      <source src="your-song.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </section>
-
-  <section id="merch">
-    <h2>MERCH</h2>
-    <p>Glitchy gear for the hallway rebels. More soon.</p>
-    <img src="your-merch-image.jpg" alt="Sample Merch">
-    <p><a href="#" style="color:#ff00aa;">DM us on IG to cop early 👟</a></p>
-  </section>
+  <main>
+    <section class="hero">
+      <h2>Garbage Never Looked This Good</h2>
+      <p>Underground sounds and scrap-style goods</p>
+    </section>
+  </main>
 </body>
 </html>
