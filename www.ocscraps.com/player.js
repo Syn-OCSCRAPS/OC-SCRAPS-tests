@@ -58,6 +58,11 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
+shuffleBtn.addEventListener("click", () => {
+  isShuffling = !isShuffling;
+  shuffleBtn.classList.toggle("active", isShuffling);
+  if (isShuffling) generateShuffledOrder();
+});
 function generateShuffledOrder() {
   shuffledOrder = [...Array(tracks.length).keys()];
   for (let i = shuffledOrder.length - 1; i > 0; i--) {
