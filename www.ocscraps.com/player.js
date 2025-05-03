@@ -9,6 +9,8 @@ const shuffleBtn = document.getElementById('shuffle');
 const loopBtn = document.getElementById('loop');
 
 let currentTrack = 0;
+let shuffledOrder = [];
+let shuffleIndex = 0;
 let isShuffling = false;
 
 function loadTrack(index) {
@@ -46,17 +48,34 @@ prevBtn.addEventListener('click', () => {
   loadTrack(index);
 });
 
-nextBtn.addEventListener('click', () => {
-  let index = isShuffling
-    ? Math.floor(Math.random() * trackList.length)
-    : (currentTrack + 1) % trackList.length;
-  loadTrack(index);
+nextBtn.addEventListener("click", () => {
+  if (isShuffling) {
+    playNextShuffledTrack();
+  } else {
+    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+    loadTrack(currentTrackIndex);
+    audio.play();
+  }
 });
 
-shuffleBtn.addEventListener('click', () => {
-  isShuffling = !isShuffling;
-  shuffleBtn.style.background = isShuffling ? '#007acc' : '#333';
-});
+function generateShuffledOrder() {
+  shuffledOrder = [...Array(tracks.length).keys()];
+  for (let i = shuffledOrder.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledOrder[i], shuffledOrder[j]] = [shuffledOrder[j], shuffledOrder[i]];
+  }
+  shuffleIndex = 0;
+}
+
+function playNextShuffledTrack() {
+  if (shuffleIndex >= shuffledOrder.length) {
+    generateShuffledOrder();
+  }
+  currentTrackIndex = shuffledOrder[shuffleIndex];
+  shuffleIndex++;
+  loadTrack(currentTrackIndex);
+  audio.play();
+}
 
 loopBtn.addEventListener('click', () => {
   audio.loop = !audio.loop;
