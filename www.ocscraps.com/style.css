@@ -192,22 +192,17 @@ h3 {
 }
 
 .merch-item {
-  flex: 1 1 200px; /* flex-grow, flex-shrink, flex-basis */
-  max-width: 200px;
+  width: 180px;
   text-align: center;
 }
 
 .merch-item img {
   width: 100%;
   height: auto;
+  max-height: 180px;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
-@media (max-width: 480px) {
-  .merch-item {
-    max-width: 150px;
-  }
-}
 
 
