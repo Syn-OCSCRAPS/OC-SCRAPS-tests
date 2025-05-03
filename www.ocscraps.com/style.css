@@ -113,6 +113,27 @@ button:hover {
   background: #555;
 }
 
+.merch-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.merch-item {
+  width: 180px;
+  text-align: center;
+}
+
+.merch-item img {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 @font-face {
     font-family: 'AveriaSerifItalic';
     src: url('fonts/AveriaSerif-Italic.ttf') format('truetype');
@@ -182,26 +203,6 @@ h3 {
   #progressBar {
     width: 100%;
   }
-
-.merch-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-.merch-item {
-  width: 180px;
-  text-align: center;
-}
-
-.merch-item img {
-  width: 100%;
-  height: auto;
-  max-height: 180px;
-  object-fit: contain;
-  border-radius: 8px;
 }
 
 
