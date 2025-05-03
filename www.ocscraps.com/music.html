@@ -6,6 +6,43 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  padding: 1rem;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+nav {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.audio-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.audio-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .music-player-box {
     flex-direction: column;
@@ -16,49 +53,20 @@
   .album-art-fixed {
     width: 100%;
     max-height: 250px;
-    height: auto;
   }
 
   .album-art-fixed img {
-    height: auto;
     width: 100%;
-    max-height: 100%;
     object-fit: contain;
   }
 
   .track-scroll {
-    height: auto;
     max-height: 300px;
-  }
-
-  .audio-controls {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
-    padding: 1rem;
-    height: auto;
-  }
-
-  .audio-controls > div,
-  .audio-controls > button,
-  .audio-controls > input {
-    width: 100%;
-  }
-
-  #currentTrackInfo,
-  #timeDisplay {
-    text-align: center;
-  }
-
-  #progressBar {
-    margin-top: 0.5rem;
-  }
-
-  #timeDisplay {
-    margin-top: 0.3rem;
+    overflow-y: auto;
+    margin-top: 1rem;
   }
 }
-  </style>
+   </style>
 </head>
 <body>
   <header>
@@ -86,17 +94,15 @@
         </ul>
       </div>
       <div class="audio-controls">
-        <div id="currentTrackInfo">Playing: <span id="currentTrackName">None</span></div>
-        <button id="prevBtn">⏮️</button>
-        <button id="playPause">▶️</button>
-        <button id="nextBtn">⏭️</button>
-        <input type="range" id="progressBar" value="0" min="0" max="100" />
-        <div id="timeDisplay">0:00 / 0:00</div>
-        <audio id="audioPlayer">
-          <source src="" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-      </div>
+  <div id="currentTrackInfo">Playing: <span id="currentTrackName">None</span></div>
+  <div class="audio-buttons">
+    <button id="prevBtn">⏮️</button>
+    <button id="playPause">▶️</button>
+    <button id="nextBtn">⏭️</button>
+  </div>
+  <input type="range" id="progressBar" value="0" min="0" max="100" />
+  <div id="timeDisplay">0:00 / 0:00</div>
+</div>
     </section>
     <script>
       const tracks = document.querySelectorAll('#trackList li');
