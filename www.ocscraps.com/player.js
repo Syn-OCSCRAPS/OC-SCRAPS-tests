@@ -19,6 +19,7 @@ function loadTrack(index) {
   audio.src = track.dataset.src;
   cover.src = track.dataset.cover;
   currentTrack = index;
+  audio.play();
 }
 
 trackList.forEach((item, index) => {
