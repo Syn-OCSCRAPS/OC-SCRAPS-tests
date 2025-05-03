@@ -34,7 +34,7 @@ nav a { margin-left: 1em; text-decoration: none; color: #ffffff; font-weight: bo
 
 .hero { background: url('assets/grainy-bg.png') center/cover no-repeat; text-align: center; padding: 4em 2em; }
 
-.hero h2 { font-family: 'Anton', sans-serif; font-size: 3em; color: #ff69b4; }
+.hero h2 { font-family: 'Anton', sans-serif; font-size: 3em; color: #ff0000; }
 
 .hero p { font-size: 1.2em; color: #ffffff; }
 
