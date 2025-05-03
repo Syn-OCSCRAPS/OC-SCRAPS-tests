@@ -131,7 +131,7 @@ button:hover {
   }
 
   a {
-    font-family: 'AveriaSerifBold', serif;
+    font-family: 'Fubbick', sans-serif; font-size: 3em; color: #ffffff;
   }
 @font-face {
     font-family: 'Fubbick';
@@ -139,6 +139,8 @@ button:hover {
     font-weight: normal;
     font-style: italic;
   }
+h3 {
+  font-family: 'Fubbick'
 @media (max-width: 768px) {
   .music-player-box {
     flex-direction: column;
