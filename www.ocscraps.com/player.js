@@ -7,6 +7,7 @@ const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 const shuffleBtn = document.getElementById('shuffle');
 const loopBtn = document.getElementById('loop');
+const tracks = Array.from(trackList);
 
 let currentTrack = 0;
 let shuffledOrder = [];
@@ -52,8 +53,8 @@ nextBtn.addEventListener("click", () => {
   if (isShuffling) {
     playNextShuffledTrack();
   } else {
-    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
-    loadTrack(currentTrackIndex);
+    currentTrack = (currentTrack + 1) % tracks.length;
+    loadTrack(currentTrack);
     audio.play();
   }
 });
@@ -76,9 +77,9 @@ function playNextShuffledTrack() {
   if (shuffleIndex >= shuffledOrder.length) {
     generateShuffledOrder();
   }
-  currentTrackIndex = shuffledOrder[shuffleIndex];
+  currentTrack = shuffledOrder[shuffleIndex];
   shuffleIndex++;
-  loadTrack(currentTrackIndex);
+  loadTrack(currentTrack);
   audio.play();
 }
 
