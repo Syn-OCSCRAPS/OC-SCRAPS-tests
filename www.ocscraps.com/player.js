@@ -95,6 +95,3 @@ loopBtn.addEventListener('click', () => {
 audio.addEventListener('ended', () => {
   if (!audio.loop) nextBtn.click();
 });
-
-// Load first track initially
-loadTrack(0);
