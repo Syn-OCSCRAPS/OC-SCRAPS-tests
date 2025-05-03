@@ -140,7 +140,7 @@ button:hover {
     font-style: italic;
   }
 h3 {
-  font-family: 'Fubbick'
+  font-family: 'Fubbick', sans-serif; color: #ffffff;
 
 }
 @media (max-width: 768px) {
