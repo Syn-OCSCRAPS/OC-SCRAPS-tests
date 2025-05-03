@@ -141,6 +141,8 @@ button:hover {
   }
 h3 {
   font-family: 'Fubbick'
+
+}
 @media (max-width: 768px) {
   .music-player-box {
     flex-direction: column;
