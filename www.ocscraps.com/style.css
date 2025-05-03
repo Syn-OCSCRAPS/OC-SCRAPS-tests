@@ -149,7 +149,7 @@ nav a { margin-left: 1em; text-decoration: none; color: #ffffff; font-weight: bo
   }
 @font-face {
     font-family: 'Fubbick';
-    src: url('fonts/Fubbick.ttf') format('truetype');
+    src: url('fonts/Fubbick.otf') format('truetype');
     font-weight: normal;
     font-style: italic;
   }
