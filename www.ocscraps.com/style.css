@@ -38,7 +38,6 @@ nav a { margin-left: 1em; text-decoration: none; color: #ffffff; font-weight: bo
 
 .hero p { font-size: 1.2em; color: #ffffff; }
 
-  <style>
 .audio-player {
   width: 90%;
   max-width: 900px;
@@ -113,8 +112,6 @@ button {
 button:hover {
   background: #555;
 }
-      }
-    }
 
 @font-face {
     font-family: 'AveriaSerifItalic';
@@ -180,4 +177,3 @@ button:hover {
   #progressBar {
     width: 100%;
   }
-}
