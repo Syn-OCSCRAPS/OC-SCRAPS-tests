@@ -171,7 +171,9 @@ button:hover {
   }
 h3 {
   font-family: 'Fubbick', sans-serif; color: #ffffff;
-
+}
+h2 {
+  font-family: 'Fubbick', sans-serif; color: #ffffff;
 }
 @media (max-width: 768px) {
   .music-player-box {
