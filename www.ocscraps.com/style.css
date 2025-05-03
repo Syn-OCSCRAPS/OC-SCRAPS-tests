@@ -186,20 +186,22 @@ h3 {
 .merch-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
   padding: 20px;
 }
 
 .merch-item {
-  width: 180px;
+  flex: 1 1 200px; /* flex-grow, flex-shrink, flex-basis */
+  max-width: 200px;
   text-align: center;
 }
 
 .merch-item img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 
