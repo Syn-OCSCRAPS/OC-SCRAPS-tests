@@ -63,6 +63,7 @@ shuffleBtn.addEventListener("click", () => {
   isShuffling = !isShuffling;
   shuffleBtn.classList.toggle("active", isShuffling);
   if (isShuffling) generateShuffledOrder();
+  shuffleBtn.style.background = isShuffling ? '#007acc' : '#333';
 });
 function generateShuffledOrder() {
   shuffledOrder = [...Array(tracks.length).keys()];
