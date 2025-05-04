@@ -20,6 +20,8 @@ function loadTrack(index) {
   cover.src = track.dataset.cover;
   currentTrack = index;
     audio.load();
+    audio.play().catch(err => {
+     console.warn("Play failed:", err);
   });
 }
 
