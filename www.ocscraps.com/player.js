@@ -19,9 +19,7 @@ function loadTrack(index) {
   audio.src = track.dataset.src;
   cover.src = track.dataset.cover;
   currentTrack = index;
-    audio.load(); // Force browser to load it fresh
-  audio.play().catch(err => {
-    console.warn("Play failed:", err);
+    audio.load();
   });
 }
 
