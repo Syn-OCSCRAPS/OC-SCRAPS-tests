@@ -53,6 +53,23 @@ nav a { margin-left: 1em; text-decoration: none; color: #ffffff; font-weight: bo
 
 .hero p { font-size: 1.2em; color: #ffffff; }
 
+.download-button {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.2s;
+}
+.download-button:hover {
+  background-color: #005f99;
+}
+
+
 .audio-player {
   width: 90%;
   max-width: 900px;
