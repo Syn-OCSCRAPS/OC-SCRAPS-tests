@@ -57,7 +57,7 @@ nav a { margin-left: 1em; text-decoration: none; color: #ffffff; font-weight: bo
   display: inline-block;
   margin: 20px auto;
   padding: 10px 20px;
-  background-color: #007acc;
+  background-color: #39c59b;
   color: white;
   text-decoration: none;
   border-radius: 6px;
@@ -65,9 +65,18 @@ nav a { margin-left: 1em; text-decoration: none; color: #ffffff; font-weight: bo
   text-align: center;
   transition: background 0.2s;
 }
+
 .download-button:hover {
-  background-color: #005f99;
+  background-color: #c53939;
 }
+
+.download-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
 
 
 .audio-player {
