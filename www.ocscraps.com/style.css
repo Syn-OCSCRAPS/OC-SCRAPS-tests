@@ -71,9 +71,12 @@ nav a { margin-left: 1em; text-decoration: none; color: #ffffff; font-weight: bo
 
 .left-panel img {
   width: 250px;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
+
+
 
 .right-panel {
   flex: 1;
@@ -220,6 +223,15 @@ h2 {
   #progressBar {
     width: 100%;
   }
+  .player-container {
+  height: 250px; /* Match the height of the cover art */
+  }
+
+  .right-panel {
+  overflow-y: auto;
+  height: 100%;
+  }
+
 }
 
 
