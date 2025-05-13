@@ -53,6 +53,31 @@
     <audio id="audio"></audio>
   </div>
 </section>
+    
+        <section class="audio-player">
+  <div class="player-container">
+    <div class="left-panel">
+      <img id="album-cover" src="assets/1-album_cover.png" alt="Album Cover" />
+    </div>
+    <div class="right-panel">
+      <ul id="track-list">
+        <li data-src="assets/tracks/a couple songs/oc_scraps.mp3" data-cover="assets/1-album_cover.png">OC SCRAPS</li>
+        <li data-src="assets/tracks/a couple songs/Just Tonight.mp3" data-cover="assets/2-album_cover.png">Just Tonight</li>
+      </ul>
+    </div>
+  </div>
+  <div class="controls">
+    <input type="range" id="progress" value="0" max="100" />
+    <div class="buttons">
+      <button id="prev">Prev</button>
+      <button id="play">Play/Pause</button>
+      <button id="next">Next</button>
+      <button id="shuffle">Shuffle</button>
+      <button id="loop">Loop</button>
+    </div>
+    <audio id="audio"></audio>
+  </div>
+</section>
 <script src="player.js"></script>
     </main>
 </body>
