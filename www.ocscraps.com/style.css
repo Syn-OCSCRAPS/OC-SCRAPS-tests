@@ -44,6 +44,19 @@ nav {
   gap: 2em;
 }
 
+#background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(60px);
+  background-size: cover;
+  background-position: center;
+  transition: background 0.8s ease;
+}
+
 
 nav a { margin-left: 1em; text-decoration: none; color: #ffffff; font-weight: bold; }
 
