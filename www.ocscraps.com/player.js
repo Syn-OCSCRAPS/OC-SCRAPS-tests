@@ -14,39 +14,16 @@ let shuffledOrder = [];
 let shuffleIndex = 0;
 let isShuffling = false;
 
-const background = document.getElementById('background-gradient');
-const colorThief = new ColorThief();
-
 function loadTrack(index) {
   const track = trackList[index];
-  const img = new Image();
-  img.crossOrigin = "Anonymous"; // Needed if album cover is from another domain
-
-  img.src = track.dataset.cover;
-  img.onload = () => {
-    // Get dominant color
-    const color = colorThief.getColor(img);
-    const gradient = `linear-gradient(135deg, rgb(${color[0]}, ${color[1]}, ${color[2]}) 0%, rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.5) 100%)`;
-    background.style.background = gradient;
-
-    // Load the audio after color is ready
-    audio.src = track.dataset.src;
-    cover.src = img.src;
-    currentTrack = index;
+  audio.src = track.dataset.src;
+  cover.src = track.dataset.cover;
+  currentTrack = index;
     audio.load();
     audio.play().catch(err => {
-img.onerror = () => {
-  background.style.background = 'linear-gradient(135deg, #222, #444)';
-  audio.src = track.dataset.src;
-  cover.src = 'fallback.jpg'; // optional fallback
-  currentTrack = index;
-  audio.load();
-  audio.play().catch(err => {
-    console.warn("Play failed:", err);
+     console.warn("Play failed:", err);
   });
-};
-
-
+}
 
 trackList.forEach((item, index) => {
   item.addEventListener('click', () => loadTrack(index));
