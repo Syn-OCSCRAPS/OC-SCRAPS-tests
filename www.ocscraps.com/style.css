@@ -186,7 +186,7 @@ button:hover {
   }
 
   p {
-    font-family: 'AveriaSerifItalic', serif;
+    font-family: 'AveriaSerifItalic'; color: #ffffff;
   }
 @font-face {
     font-family: 'AveriaSerifBold';
