@@ -28,28 +28,28 @@
   </div>
 </header>
   <main>
- <section class="audio-player">
+<section class="audio-player">
   <div class="player-container">
     <div class="left-panel">
-      <img id="album-cover" src="assets/tracks/a couple songs/cover-a_couple_songs.png" alt="Album Cover" />
+      <img class="album-cover" src="assets/tracks/a couple songs/cover-a_couple_songs.png" alt="Album Cover" />
     </div>
     <div class="right-panel">
-      <ul id="track-list">
+      <ul class="track-list">
         <li data-src="assets/tracks/a couple songs/oc_scraps.mp3" data-cover="assets/tracks/a couple songs/cover-a_couple_songs.png">OC SCRAPS</li>
         <li data-src="assets/tracks/a couple songs/Just Tonight.mp3" data-cover="assets/tracks/a couple songs/cover-a_couple_songs.png">Just Tonight</li>
       </ul>
     </div>
   </div>
   <div class="controls">
-    <input type="range" id="progress" value="0" max="100" />
+    <input type="range" class="progress" value="0" max="100" />
     <div class="buttons">
-      <button id="prev">Prev</button>
-      <button id="play">Play/Pause</button>
-      <button id="next">Next</button>
-      <button id="shuffle">Shuffle (this makes sense)</button>
-      <button id="loop">Loop</button>
+      <button class="prev">Prev</button>
+      <button class="play">Play/Pause</button>
+      <button class="next">Next</button>
+      <button class="shuffle">Shuffle</button>
+      <button class="loop">Loop</button>
     </div>
-    <audio id="audio"></audio>
+    <audio class="audio"></audio>
   </div>
 </section>
     
