@@ -35,10 +35,17 @@ function loadTrack(index) {
     currentTrack = index;
     audio.load();
     audio.play().catch(err => {
-      console.warn("Play failed:", err);
-    });
-  };
-}
+img.onerror = () => {
+  background.style.background = 'linear-gradient(135deg, #222, #444)';
+  audio.src = track.dataset.src;
+  cover.src = 'fallback.jpg'; // optional fallback
+  currentTrack = index;
+  audio.load();
+  audio.play().catch(err => {
+    console.warn("Play failed:", err);
+  });
+};
+
 
 
 trackList.forEach((item, index) => {
